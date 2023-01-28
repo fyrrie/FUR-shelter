@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<title> sample </title>
+<style> 
+      /* CSS styles for the gallery container */
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      /* CSS styles for each image in the gallery */
+      .gallery img {
+        width: 200px;
+        height: 200px;
+        margin: 10px;
+        object-fit: cover;
+		border-radius: 10px;
+        transition: transform 0.3s ease;
+		box-shadow: 5px 5px 5px #888888;
+      }
+      /* CSS styles for the modal container */
+      .modal {
+        display: none; /* hidden by default */
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+      /* CSS styles for the modal content */
+      .modal-content {
+        position: relative;
+        margin: 10% auto;
+        width: 80%;
+      }
+      /* CSS styles for the modal image */
+      .modal-content img {
+        width: 100%;
+        height: auto;
+        max-width: 1000px;
+        max-height: 550px;
+        object-fit: contain;
+      }
+      /* CSS styles for the modal close button */
+      .modal-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: color 0.3s ease;
+      }
+      /* CSS styles for the image hover effect */
+      .gallery img:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+      /* CSS styles for the close button hover effect */
+      .modal-close:hover {
+        color: red;
+      }
+	  
+	  .row > .column {
+  padding: 0 8px;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Create four equal columns that floats next to eachother */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  background-color: black;
+  padding: 2px 16px;
+  color: white;
+}
+
+img.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+img.hover-shadow {
+  transition: 0.3s;
+}
+
+.hover-shadow:hover {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+    </style>
+<head>
+<title>Gallery</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="Homepage.html" class="w3-bar-item w3-button"><b>FUR</b> Shelter </a>
+	
+   <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+	 <a href="About Us.html" class="w3-bar-item w3-button">About Us</a>
+      <a href="Cat Breeds.html" class="w3-bar-item w3-button">Cats </a>
+	   <a href="Dog Breeds.html" class="w3-bar-item w3-button">Dogs </a>
+		 <a href="Gallery.html" class="w3-bar-item w3-button">Gallery</a>
+		  <a href="Proceed to Adoption.html" class="w3-bar-item w3-button">Proceed to Adoption</a>
+      <a href="Donate.html" class="w3-bar-item w3-button">Donate</a>
+      <a href="Contact Us.html" class="w3-bar-item w3-button">Contact Us</a>
+	  
+    </div>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="gallery">
+      <img src="gal1.png"  onclick="openModal(this)">
+      <img src="gal2.png"  onclick="openModal(this)">
+      <img src="gal3.png"  onclick="openModal(this)">
+      <img src="gal4.png"  onclick="openModal(this)">
+      
+    </div>
+	<br>
+	<div class="gallery">
+      <img src="gal5.png"  onclick="openModal(this)">
+      <img src="gal6.png"  onclick="openModal(this)">
+      <img src="gal7.png"  onclick="openModal(this)">
+      <img src="gal8.png"  onclick="openModal(this)">
+      
+    </div>
+	
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modal-img">
+      </div>
+    </div>
+<br>
+<br>
+<br>
+<!-- Images used to open the lightbox -->
+<div class="row">
+  <div class="column">
+    <img src="gal1.png" onclick="openModal();currentSlide(1)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="gal2.png" onclick="openModal();currentSlide(2)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="gal3.png" onclick="openModal();currentSlide(3)" class="hover-shadow">
+  </div>
+  <div class="column">
+    <img src="gal4.png" onclick="openModal();currentSlide(4)" class="hover-shadow">
+  </div>
+</div>
+
+<!-- The Modal/Lightbox -->
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 4</div>
+      <img src="gal1_wide.png" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 4</div>
+      <img src="img2_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 4</div>
+      <img src="img3_wide.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">4 / 4</div>
+      <img src="img4_wide.jpg" style="width:100%">
+    </div>
+
+    <!-- Next/previous controls -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Caption text -->
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+    <!-- Thumbnail image controls -->
+    <div class="column">
+      <img class="demo" src="img1.jpg" onclick="currentSlide(1)" alt="Nature">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="img2.jpg" onclick="currentSlide(2)" alt="Snow">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="img3.jpg" onclick="currentSlide(3)" alt="Mountains">
+    </div>
+
+    <div class="column">
+      <img class="demo" src="img4.jpg" onclick="currentSlide(4)" alt="Lights">
+    </div>
+  </div>
+</div>
+    <script>
+      // JavaScript function to open the modal
+      function openModal(image) {
+		var modal = document.getElementById("modal");
+        var modalImg = document.getElementById("modal-img");
+        modalImg.src = image.src;
+        modal.style.display = "block";
+      }
+      
+      // JavaScript function to close the modal
+      function closeModal() {
+        var modal = document.getElementById("modal");
+        modal.style.display = "none";
+      }
+    </script>
+<br>
+<br>
+<br>
+<br>
+<main>
+<footer style="color:black; font size = 10";> 
+
+    <hr>
+		<p style="font-size: 15px"> <i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Web Developer: Delavin, Guzman</i></p>
+    </hr>
+	
+    </footer>
+</main>
+</html>

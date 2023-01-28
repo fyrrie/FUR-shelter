@@ -1,0 +1,23 @@
+code4-1_back.css
+
+figure {
+  padding: 20px;
+  border: 20px;
+  background-color: rgba(52, 52,180,0.3);
+  border-color: rgb(52,52,180);
+  border-style: ridge;
+  background-image: url("ws.png");
+  background-position: bottom right;
+  background-size: 45%;
+  background-repeat: no-repeat;
+  box-shadow: 5px 10px 15px black;
+}
+
+figcaption {
+  font-size: 1.8em;
+  text-align: center;
+  border-bottom: 2px solid;
+  border-color: rgb(52, 52, 180);
+} 
+
+
